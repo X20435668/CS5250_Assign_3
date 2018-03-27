@@ -1,13 +1,18 @@
 #include <linux/kernel.h>
 #include <linux/init.h>
 #include <linux/module.h>
+#include <linux/moduleparam.h>
 
 MODULE_LICENSE("GPL");
 MODULE_AUTHOR("Xu Yudong");
 
+static char*who="XuYudong";
+module_param(who,charp,0000);
+MODULE_PARM_DESC(who,"who should I say hello to?");
+	
 static int hello_init(void)
 {
-	printk(KERN_ALERT "Hello, world\n");
+	printk(KERN_ALERT "Hello, world: %s\n", who);
 	return 0;
 }
 
