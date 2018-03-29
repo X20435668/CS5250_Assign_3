@@ -9,6 +9,7 @@
 #include <asm/uaccess.h>
 
 #define MAJOR_NUMBER 61
+MODULE_AUTHOR("Xu Yudong");
 /* forward declaration ????? */
 int onebyte_open(struct inode *inode, struct file * filep);
 int onebyte_release(struct inode *inode, struct file * filep);
